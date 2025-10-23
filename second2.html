@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media Portal</title>
+  <link rel="stylesheet" href="style2.css" />
+</head>
+<body>
+  <header>
+    <h1>🎧 Media Portal</h1>
+    <nav>
+      <button id="videoBtn" class="active">Videos</button>
+      <button id="audioBtn">Audios</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Video Section -->
+    <section id="videos" class="media-section">
+      <h2>Trending Videos</h2>
+      <div class="media-grid">
+        <div class="media-item">
+          <iframe src="https://www.youtube.com/embed/mWRsgZuwf_8" title="Imagine Dragons - Demons" allowfullscreen></iframe>
+          <p>Imagine Dragons - Demons</p>
+        </div>
+        <div class="media-item">
+          <iframe src="https://www.youtube.com/embed/fJ9rUzIMcZQ" title="Queen - Bohemian Rhapsody" allowfullscreen></iframe>
+          <p>Queen - Bohemian Rhapsody</p>
+        </div>
+        <div class="media-item">
+          <iframe src="https://www.youtube.com/embed/kXYiU_JCYtU" title="Linkin Park - Numb" allowfullscreen></iframe>
+          <p>Linkin Park - Numb</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Audio Section -->
+    <section id="audios" class="media-section hidden">
+      <h2>Top Audio Tracks</h2>
+      <div class="media-grid">
+        <div class="media-item">
+          <p>Audio Track 1 - SoundHelix</p>
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="media-item">
+          <p>Audio Track 2 - SoundHelix</p>
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="media-item">
+          <p>Audio Track 3 - SoundHelix</p>
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const videoBtn = document.getElementById('videoBtn');
+    const audioBtn = document.getElementById('audioBtn');
+    const videos = document.getElementById('videos');
+    const audios = document.getElementById('audios');
+
+    videoBtn.addEventListener('click', () => {
+      videoBtn.classList.add('active');
+      audioBtn.classList.remove('active');
+      videos.classList.remove('hidden');
+      audios.classList.add('hidden');
+    });
+
+    audioBtn.addEventListener('click', () => {
+      audioBtn.classList.add('active');
+      videoBtn.classList.remove('active');
+      audios.classList.remove('hidden');
+      videos.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
